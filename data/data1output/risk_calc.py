@@ -13,6 +13,12 @@ EQUIPMENT_FILES = [
     "Fuse_Bank_Clip.csv",
     "Switch_Clip.csv",
 ]
+STORM_FACTORS = {
+    "normal": 1.0,
+    "moderate": 1.5,
+    "severe": 3.0,
+}
+STORM_SCENARIO = "severe"
 
 # Keep identifiers as strings so leading zeros are preserved.
 customers = pd.read_csv(CUSTOMERS_FILE, dtype=str).fillna("")
@@ -100,7 +106,7 @@ def get_downstream_nodes(start_node):
 def calculate_risk(identifier):
     """
     Estimate outage impact for a circuit, equipment ID,
-    or network location ID.
+    or network location ID, with an assumed storm adjustment.
     """
     identifier = str(identifier).strip()
 
@@ -118,19 +124,17 @@ def calculate_risk(identifier):
 
     elif start_node in known_nodes or start_node in children:
         downstream = get_downstream_nodes(start_node)
-
         affected = set()
 
-        # Include customers whose transformer is in the
-        # downstream portion of the graph.
+        # Include customers whose transformer is downstream.
         for node in downstream:
             affected.update(services_at_transformer.get(node, set()))
 
-        # A location node may itself be a customer service location.
+        # Include service locations directly associated with this node.
         if start_node in services_at_transformer:
             affected.update(services_at_transformer[start_node])
 
-        # If no customers could be traced, don't invent a count.
+        # Do not invent a count if customers cannot be traced.
         if not affected:
             return {
                 "node": identifier,
@@ -163,6 +167,7 @@ def calculate_risk(identifier):
                 "error": "ID not found in the loaded network data.",
             }
 
+    # Calculate baseline outage impact.
     count = len(affected)
     share = count / total_services if total_services else 0
     score = round(share * 100, 2)
@@ -176,6 +181,10 @@ def calculate_risk(identifier):
     else:
         rating = "Critical"
 
+    # Apply the assumed storm scenario.
+    storm_factor = STORM_FACTORS[STORM_SCENARIO]
+    storm_risk_score = round(score * storm_factor, 3)
+
     return {
         "node": identifier,
         "estimated_affected_service_locations": count,
@@ -183,15 +192,21 @@ def calculate_risk(identifier):
         "percent_of_dataset_affected": round(share * 100, 2),
         "impact_score": score,
         "rating": rating,
+        "storm_scenario": STORM_SCENARIO,
+        "storm_factor": storm_factor,
+        "storm_risk_score": storm_risk_score,
         "method": method,
         "data_confidence": confidence,
         "explanation": (
             f"This estimate identifies {count:,} service locations "
             f"out of {total_services:,} in the dataset "
-            f"({share * 100:.2f}%). The rating describes potential "
-            f"outage impact, not the probability of equipment failure."
+            f"({share * 100:.2f}%). The impact rating describes "
+            f"potential outage impact. The storm-adjusted score "
+            f"uses an assumed {STORM_FACTOR if False else 'storm'} "
+            f"scenario and is not a probability of equipment failure."
         ),
     }
+
 
 
 if __name__ == "__main__":

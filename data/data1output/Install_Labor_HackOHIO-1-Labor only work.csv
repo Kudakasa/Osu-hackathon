@@ -1,0 +1,12 @@
+Original Intent,Anonymized Work Type,Anonymized Labor Description,INSTALL_HOURS,
+Difficult Location,Restricted Access Work,"Additional labor required when work is performed in locations with limited access, increased setup requirements, or reduced equipment maneuverability.",0.5,
+Backyard Adder,Confined Property Access,Additional labor required when work occurs in areas with restricted equipment access and higher material handling effort.,0.5,
+Off-Road / Track Access,Remote Site Access,"Additional labor required when personnel, materials, or equipment must travel over non-standard access routes.",0.5,
+Hand Dig,Manual Excavation,Additional labor required when excavation activities cannot be performed using conventional equipment.,1.5,per cubic foot
+Rock Hole,Difficult Excavation,Additional labor required when subsurface conditions significantly increase excavation effort.,4,per cubic foot
+Pole Straighten / Rake,Structural Realignment,Additional labor required to adjust existing infrastructure to meet operational requirements.,0.544,
+Junction Pole Work,Complex Work Location,Additional labor associated with work performed where multiple assets or connections converge.,,
+Access Constraint Adder,Apply when normal equipment access is obstructed or limited.,,0.5,
+Remote Location Adder,Apply when a work location cannot be reached using standard access methods.,,1.312,
+Specialized Handling Adder,"Apply when additional transportation, lifting, or positioning resources are needed.",,0.5,
+Site Complexity Adder,Apply when physical site conditions substantially increase setup or execution effort.,,0.5,

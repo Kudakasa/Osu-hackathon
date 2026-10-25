@@ -1,0 +1,90 @@
+Crossarm CU Average Hours,,,
+Avg Install Hours,Avg Removal Hours,,
+0.374114649681528,0.212178343949044,,
+,,,
+Bracket CU Average Hours,,,
+Avg Install Hours,Avg Removal Hours,,
+0.617239436619718,0.254422535211268,,
+,,,
+,,,
+Pole CU Average Hours by Size,,,
+Size Group,Height Range,Avg Install Hours,Avg Removal Hours
+Small,25–35 ft,1.94161038961039,0.763636363636363
+Medium,40–55 ft,2.50295207667732,0.927488817891373
+Large,60 ft and above,3.36836781609195,1.15319540229885
+,,,
+,,,
+Transformer CU Average Hours by Size,,,
+Size (kVA),CU Count,Avg Install Hours,Avg Removal Hours
+10,35,1.18948571428571,0.808228571428572
+15,32,1.184,0.8
+25,47,1.18808510638298,0.806127659574468
+37,30,1.2384,0.881600000000001
+50,47,1.24459574468085,0.890893617021277
+75,41,1.27765853658537,0.936975609756098
+100,42,1.28,0.944
+167,39,1.28,0.944
+250,13,1.33046153846154,0.962461538461538
+333,9,1.35466666666667,0.976
+500,9,1.37955555555556,0.986666666666667
+833,4,1.364,0.98
+,,,
+,,,
+Anchor CU Average Hours,,,
+CU Count,Avg Install Hours,Avg Removal Hours,
+40,0.3972,0.1188,
+,,,
+,,,
+Equipment Lead CU Average Hours,,,
+Avg Install Hours,Avg Removal Hours,,
+0.650190476190476,0.206095238095238,,
+,,,
+,,,
+Grounding CU Average Hours,,,
+Avg Install Hours,Avg Removal Hours,,
+0.53195652173913,0.152960869565217,,
+,,,
+,,,
+Guying CU Average Hours,,,
+Avg Install Hours,Avg Removal Hours,,
+0.367034482758621,0.162206896551724,,
+,,,
+,,,
+Dead-End CU Average Hours,,,
+Avg Install Hours,Avg Removal Hours,,
+0.107607843137255,0.064,,
+,,,
+,,,
+Insulator CU Average Hours,,,
+Avg Install Hours,Avg Removal Hours,,
+0.0492307692307692,0.0393846153846154,,
+,,,
+,,,
+Pin CU Average Hours,,,
+Avg Install Hours,Avg Removal Hours,,
+0.0660645161290323,0.0423225806451613,,
+,,,
+,,,
+Recloser CU Average Hours,,,
+Avg Install Hours,Avg Removal Hours,,
+0.57262385321101,0.525357798165136,,
+,,,
+,,,
+Secondary Conductor Attachment CU Average Hours,,,
+Avg Install Hours,Avg Removal Hours,,
+0.232585365853659,0.126829268292683,,
+,,,
+,,,
+Service CU Average Hours,,,
+Avg Install Hours,Avg Removal Hours,,
+1.69298113207547,0.48,,
+,,,
+,,,
+Switch CU Average Hours,,,
+Avg Install Hours,Avg Removal Hours,,
+1.75794594594595,1.00972972972973,,
+,,,
+,,,
+Fuse Cutout Average Hours,,,
+Avg Install Hours,Avg Removal Hours,,
+0.256,0.128,,
